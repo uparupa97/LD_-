@@ -30,10 +30,6 @@
     margin-right: 20px; 
 }
 
-.nav-willa { 
-  margin-right: 5px;
-
-}
 
 .form-switch { 
   margin-right: 20px; 
@@ -90,22 +86,67 @@
     margin-bottom: 10px; /* h4들 간의 간격 */
 }
 
+.login-section {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 400px;
+  margin: 100px auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 
-.login-banner {
-    background: linear-gradient(to right, #4a90e2, #50c6e6);
-    padding: 40px;
-    border-radius: 10px;
-    max-width: 400px;
-    margin: 50px auto;
-    color: white;
+.login-section h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.welcome-message {
+  text-align: center;
+  margin-top: 20px;
+  color: #2c3e50;
+  font-size: 1.2rem;
+  display: none;
+}
+
+.error-message {
+  text-align: center;
+  margin-top: 20px;
+  color: red;
+  font-size: 1.2rem;
+  display: none;
+}
+
+/* 다음 섹션 스타일 */
+.next-section {
+  display: none;
+  text-align: center;
+  font-size: 1.5rem;
+  height: 100px;
+  background-color: rgb(141, 135, 135);
+  color: black; /* 글씨가 잘 보이도록 흰색으로 설정 */
+  display: flex; /* Flexbox 사용 */
+  justify-content: center; /* 가로 중앙 정렬 */
+  align-items: center; /* 세로 중앙 정렬 */
+  padding: 0px; 
+
+  opacity: 0;
+  transform: translateY(-100px); /* 처음에 위쪽에 위치 */
+  animation: slideDown 1s ease-out forwards; /* 애니메이션 설정 */
+  
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-100px); /* 시작: 위쪽에 위치 */
   }
-  .login-banner h2 {
-    text-align: center;
-    margin-bottom: 20px;
+  to {
+    opacity: 1;
+    transform: translateY(0); /* 끝: 원래 위치 */
   }
-  .login-banner .form-control {
-    margin-bottom: 15px;
-  }
-  .login-banner .btn {
-    width: 100%;
-  }
+}
+
+#nextMessage { 
+  padding: 30px; 
+  transform: translateY();
+}

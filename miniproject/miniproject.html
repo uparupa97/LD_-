@@ -88,13 +88,9 @@
                       <a class="nav-link nav-willa" href="https://www.welaaa.com">윌라</a>
                     </li>
                   </div>
-
-
                   <div style="display: block; width: 1px; height: 20px; background-color: gray; margin: 15px 0; align-items: center; transform: translateY(-3px);"></div>
-
-
-
                 </ul>
+
                 <form class="d-flex" role="search">
                   <div class="form-check form-switch">
                     <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
@@ -118,22 +114,41 @@
        </div >
     </div>
 
-    <div class="login-banner">
-        <h2>로그인</h2>
-        <form id="loginForm">
-          <div class="mb-3">
-            <label for="email" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
-          </div>
-          <div class="mb-3">
-            <label for="password" class="form-label">Password</label>
-            <input type="password" class="form-control" id="password" placeholder="Enter your password" required>
-          </div>
-          <button type="submit" class="btn btn-primary">Login</button>
-        </form>
-        <div id="loginMessage" class="mt-3"></div>
+    <div class="login-section" id="loginSection">
+      <h2>로그인</h2>
+      <form id="loginForm">
+        <div class="mb-3">
+          <label for="email" class="form-label">이메일</label>
+          <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">비밀번호</label>
+          <input type="password" class="form-control" id="password" placeholder="Enter your password" required>
+        </div>
+        <button type="submit" class="btn btn-primary w-100">로그인</button>
+      </form>
+  
+      <!-- 로그인 후 메시지 -->
+      <div id="welcomeMessage" class="welcome-message">
+        <!-- 여기에 로그인 성공 후 메시지가 표시됨 -->
       </div>
+  
+      <!-- 오류 메시지 -->
+      <div id="errorMessage" class="error-message">
+        <!-- 로그인 실패 시 오류 메시지 -->
+      </div>
+    </div>
 
+
+    <div class="next-section" id="nextSection">
+
+      <div class="loginEnterPage">
+        <p id="nextMessage"></p>
+      </div>
+      
+    </div>
+      
+    
 
 
       
