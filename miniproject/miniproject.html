@@ -157,26 +157,26 @@
         <!-- 첫 번째 책 카드 -->
         <div class="col-6 col-sm-3 book-card">
           <div class="card" style="width: 13rem;">
-            <img src="https://cdn-icons-png.flaticon.com/512/5833/5833263.png" class="card-img-top" alt="돈의 속성">
+            <img src="./image/section1-reading1.png" class="card-img-top" alt="${book.title}">
             <div class="card-body">
               <h5 class="card-title">책 제목</h5>
-              <p class="card-text">책 유형</p>
-              <p class="card-text">책 장르</p>
+              <p class="card-text">종이책</p>
+              <p class="card-text">경제/경영</p>
               <button class="btn btn-primary" onclick="openMemo(this)">내용 메모</button>
+              <button class="btn btn-warning" onclick="showMoveModal(${index})">읽었던 책으로 이동</button>
+              <button class="btn btn-danger" onclick="showDeleteModal(${index})">삭제</button>
               <div class="memoModal" style="display: none;">
                 <div class="memo-content">
                   <h5>메모 작성</h5>
-                  <textarea rows="4" cols="50" placeholder="메모를 입력하세요..."></textarea><br>
-                  <button class="btn btn-success">Submit</button>
+                  <textarea rows="4" cols="50" placeholder="메모를 입력하세요...">${book.memo}</textarea><br>
                   <button class="btn btn-secondary" onclick="closeMemo(this)">Close</button>
                 </div>
-              </div>
+                </div>
             </div>
           </div>
         </div>
       </div>
 
-      
 
       <!-- 책 추가 모달 -->
       <div class="modal fade" id="addBookModal" tabindex="-1" aria-labelledby="addBookModalLabel" aria-hidden="true">
@@ -227,10 +227,62 @@
         </div>
       </div>
 
+      <!-- 책 삭제 모달 -->
+<div class="modal fade" id="deleteBookModal" tabindex="-1" aria-labelledby="deleteBookModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="deleteBookModalLabel">책 삭제</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        이 책을 삭제하시겠습니까?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">취소</button>
+        <button type="button" class="btn btn-danger" onclick="deleteBook()">삭제</button>
+      </div>
     </div>
   </div>
 </div>
 
+<!-- 책 옮기기 모달 -->
+<div class="modal fade" id="moveBookModal" tabindex="-1" aria-labelledby="moveBookModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="moveBookModalLabel">읽었던 책으로 이동</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        이 책을 읽었던 책 목록으로 옮기시겠습니까?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">취소</button>
+        <button type="button" class="btn btn-success" onclick="moveBook()">이동</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+    </div>
+  </div>
+</div>
+
+<div class="container text-center readBooks" id="readFinishlist">
+  <div class="row readFinishBooks-section">
+    <div class="col-12">
+      <br/>
+      <div class="readFinishlist">
+        <h1 >읽었던 책 목록</h1>
+      </div>
+      <br/>
+      <div class="row" id="readBookList">
+        <!-- 읽었던 책 목록이 여기에 표시됨 -->
+      </div>
+    </div>
+  </div>
+</div>
 
 
   </main>
