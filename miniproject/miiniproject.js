@@ -221,7 +221,7 @@ function moveBook() {
   document.getElementById('readBookList').innerHTML = '';
   readBooks.forEach((book, index) => createReadBookCard(book, index));
 
-  const moveModal = bootstrap.Modal.getInstance(document.getElementById('moveBookModal'));
+  var moveModal = bootstrap.Modal.getInstance(document.getElementById('moveBookModal'));
   moveModal.hide();
 }
 
