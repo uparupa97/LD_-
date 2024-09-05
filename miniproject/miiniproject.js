@@ -176,20 +176,29 @@ function showDeleteModal(index) {
 // 책 삭제 기능
 function deleteBook() {
   const storedBooks = JSON.parse(localStorage.getItem('bookList')) || [];
+  const readBooks = JSON.parse(localStorage.getItem('readBookList')) || [];
+
   storedBooks.splice(currentBookIndex, 1); // 선택한 책 삭제
   localStorage.setItem('bookList', JSON.stringify(storedBooks));
+
+  readBooks.splice(currentBookIndex, 1); 
+  localStorage.setItem('readBookList', JSON.stringify(readBooks));
 
   document.getElementById('bookList').innerHTML = ''; // 기존 책 목록 초기화
   storedBooks.forEach((book, index) => createBookCard(book, index)); // 남은 책 목록 다시 그리기
 
-  var deleteModal = bootstrap.Modal.getInstance(document.getElementById('deleteBookModal'));
+  document.getElementById('readBookList').innerHTML = ''; 
+  readBooks.forEach((book, index) => createReadBookCard(book, index));
+
+
+  const deleteModal = bootstrap.Modal.getInstance(document.getElementById('deleteBookModal'));
   deleteModal.hide();
 }
 
 // 읽었던 책으로 이동 모달 열기
 function showMoveModal(index) {
   currentBookIndex = index; // 이동할 책의 인덱스 저장
-  var moveModal = new bootstrap.Modal(document.getElementById('moveBookModal'));
+  const moveModal = new bootstrap.Modal(document.getElementById('moveBookModal'));
   moveModal.show();
 }
 
@@ -212,7 +221,7 @@ function moveBook() {
   document.getElementById('readBookList').innerHTML = '';
   readBooks.forEach((book, index) => createReadBookCard(book, index));
 
-  var moveModal = bootstrap.Modal.getInstance(document.getElementById('moveBookModal'));
+  const moveModal = bootstrap.Modal.getInstance(document.getElementById('moveBookModal'));
   moveModal.hide();
 }
 
