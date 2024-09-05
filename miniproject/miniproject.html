@@ -277,28 +277,28 @@
         <h1 >읽었던 책 목록</h1>
       </div>
       <br/>
-      <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#addBookModal">+ 책 추가</button>
+      <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#addReadBookModal">+ 책 추가</button>
 
-      <div class="modal fade" id="addBookModal" tabindex="-1" aria-labelledby="addBookModalLabel" aria-hidden="true">
+      <div class="modal fade" id="addReadBookModal" tabindex="-1" aria-labelledby="addReadBookModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="addBookModalLabel">새 책 추가</h5>
+              <h5 class="modal-title" id="addReadBookModalLabel">새 책 추가</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-              <form id="newBookForm">
+              <form id="newReadBookForm">
                 <div class="mb-3">
                   <label for="bookImage" class="form-label">책 이미지 URL</label>
-                  <input type="text" class="form-control" id="bookImage" placeholder="이미지 URL 입력">
+                  <input type="text" class="form-control" id="bookImageRead" placeholder="이미지 URL 입력">
                 </div>
                 <div class="mb-3">
                   <label for="bookTitle" class="form-label">책 제목</label>
-                  <input type="text" class="form-control" id="bookTitle" placeholder="책 제목 입력">
+                  <input type="text" class="form-control" id="bookTitleRead" placeholder="책 제목 입력">
                 </div>
                 <div class="mb-3">
                   <label for="bookSource" class="form-label">서재 종류</label>
-                  <select class="form-select" id="bookSource">
+                  <select class="form-select" id="bookSourceRead">
                     <option value="밀리의 서재">밀리의 서재</option>
                     <option value="윌라">윌라</option>
                     <option value="종이책">종이책</option>
@@ -307,7 +307,7 @@
                 </div>
                 <div class="mb-3">
                   <label for="bookCategory" class="form-label">카테고리</label>
-                  <select class="form-select" id="bookCategory">
+                  <select class="form-select" id="bookCategoryRead">
                     <option value="경제/경영">경제/경영</option>
                     <option value="소설">소설</option>
                     <option value="시/에세이">시/에세이</option>
@@ -315,7 +315,7 @@
                 </div>
                 <div class="mb-3">
                   <label for="bookMemo" class="form-label">메모</label>
-                  <textarea class="form-control" id="bookMemo" rows="3" placeholder="책 내용을 메모하세요..."></textarea>
+                  <textarea class="form-control" id="bookMemoRead" rows="3" placeholder="책 내용을 메모하세요..."></textarea>
                 </div>
               </form>
             </div>

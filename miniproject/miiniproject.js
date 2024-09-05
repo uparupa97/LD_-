@@ -225,6 +225,36 @@ function moveBook() {
   moveModal.hide();
 }
 
+function addReadBook() {
+    const bookImageRead = document.getElementById('bookImageRead').value;
+    const bookTitleRead = document.getElementById('bookTitleRead').value;
+    const bookSourceRead = document.getElementById('bookSourceRead').value;
+    const bookCategoryRead = document.getElementById('bookCategoryRead').value;
+    const bookMemoRead = document.getElementById('bookMemoRead').value;
+
+    const newBook = {
+      image: bookImageRead,
+      title: bookTitleRead,
+      source: bookSourceRead,
+      category: bookCategoryRead,
+      memo: bookMemoRead
+    };
+
+    // 책 카드 생성 및 추가
+    createReadBookCard(newBook);
+
+    // 로컬 스토리지에 책 저장
+    const readBooks = JSON.parse(localStorage.getItem('readBookList')) || [];
+    readBooks.push(newBook);
+    localStorage.setItem('readBookList', JSON.stringify(readBooks));
+
+    // 책 추가 모달 닫기
+    const addReadBookModal = new bootstrap.Modal(document.getElementById('addReadBookModal'));
+    addBookModal.hide();
+    document.getElementById('newReadBookForm').reset();
+  }
+
+
 // 읽었던 책 카드 생성
 function createReadBookCard(book, index) {
   const readBookList = document.getElementById('readBookList');
